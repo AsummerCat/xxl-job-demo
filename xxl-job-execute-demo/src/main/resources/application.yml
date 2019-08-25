@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: xxl-job-execute-demo
+server:
+  port: 8081
+
+xxl:
+  job:
+    admin:
+    # 这边表示连接带调度中心的地址
+      address: http://127.0.0.1:8080/xxl-job-admin
+
+    # 实例执行器的相关配置
+    executor:
+    # 执行器名称
+      appname: xxl-job-demo
+      #ip设置
+      ip:
+      # 注册的端口
+      port: 9999
+      # 日志地址
+      logpath: /data/applogs/xxl-job/jobhandler
+      ### xxl-job log retention days
+      logretentiondays: -1
+    # 如过要加密的话 对称
+    accessToken:
